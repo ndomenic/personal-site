@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const port = process.env.PORT;
+const port = 80;
 const buildDir = path.join(__dirname, '..', '..', 'client', 'build');
 const app = express();
 
