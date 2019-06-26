@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "set NODE_ENV=development && set PORT=80 && nodemon src/index.js",
-    "start": "set NODE_ENV=production && set PORT=80 && pm2 start src/index.js --name 'Personal-Site'",
+    "test": "cross-env NODE_ENV=development PORT=80 nodemon src/index.js",
+    "start": "cross-env NODE_ENV=production PORT=80 pm2 start src/index.js --name 'Personal-Site'",
     "stop": "pm2 stop 'Personal-Site'"
   },
   "keywords": [],
@@ -14,6 +14,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "cross-env": "^5.2.0",
     "express": "^4.16.4",
     "nodemon": "^1.19.0",
     "pm2": "^3.5.1"
