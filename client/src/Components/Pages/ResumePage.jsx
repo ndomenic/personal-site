@@ -7,16 +7,16 @@ const styles = theme => ({
   }
 });
 
-class Error404 extends React.Component {
+class ResumePage extends React.Component {
   render() {
     const {classes} = this.props;
 
     return (
       <div className={classes.root}>
-        <h1>Hmm... that page couldn't be found. Click <a href='/'>here</a> to go to the home page.</h1>
+        <h1>Resume</h1>
       </div>
     )
   }
 }
 
-export default withStyles(styles)(Error404);
+export default withStyles(styles)(ResumePage);

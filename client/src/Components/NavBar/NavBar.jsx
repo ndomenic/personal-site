@@ -26,29 +26,41 @@ const styles = {
   },
   grow: {
     flexGrow: 1,
-    textAlign: 'center'
+    textAlign: 'center',
+    paddingRight: '48px'
   },
   menuButton: {
     marginLeft: -12,
     marginRight: 20,
-  },
-  logo: {
-    marginTop: '2px',
-    height: '60px'
   }
 };
 
 //The list of items in the drawer
 const items = [
     {
-      text: 'Home Page',
-      icon: <Icon>web</Icon>,
+      text: 'Home',
+      icon: <Icon>home</Icon>,
       path: prefix + '/'
     },
     {
-      text: 'Second Page',
-      icon: <Icon>create</Icon>,
-      path: prefix + '/SecondPage'
+      text: 'About',
+      icon: <Icon>info</Icon>,
+      path: prefix + '/about'
+    },
+    {
+      text: 'Resume',
+      icon: <Icon>description</Icon>,
+      path: prefix + '/resume'
+    },
+    {
+      text: 'Contact',
+      icon: <Icon>question_answer</Icon>,
+      path: prefix + '/contact'
+    },
+    {
+      text: 'Projects',
+      icon: <Icon>code</Icon>,
+      path: prefix + '/projects'
     }
   ];
   
@@ -94,8 +106,8 @@ class NavBar extends React.Component {
                 <MenuIcon/>
               </IconButton>
               <div className={classes.grow} >
-                <Typography variant="h5" color="inherit">
-                  Nicholas Domenichini
+                <Typography variant="h4" color="inherit">
+                  Nick Domenichini
                 </Typography>
               </div>
             </Toolbar>

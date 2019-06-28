@@ -7,16 +7,16 @@ const styles = theme => ({
   }
 });
 
-class SecondPage extends React.Component {
+class ProjectsPage extends React.Component {
   render() {
     const {classes} = this.props;
 
     return (
       <div className={classes.root}>
-        <h1>Second Page</h1>
+        <h1>Projects</h1>
       </div>
     )
   }
 }
 
-export default withStyles(styles)(SecondPage);
+export default withStyles(styles)(ProjectsPage);

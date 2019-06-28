@@ -3,7 +3,10 @@ import { withStyles } from "@material-ui/core/styles";
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import NavBar from './NavBar/NavBar';
 import HomePage from './Pages/HomePage';
-import SecondPage from './Pages/SecondPage';
+import AboutPage from './Pages/AboutPage';
+import ResumePage from './Pages/ResumePage';
+import ContactPage from './Pages/ContactPage';
+import ProjectsPage from './Pages/ProjectsPage';
 import Error404 from './Pages/Error404';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
@@ -44,7 +47,10 @@ class App extends React.Component {
             <main style={{flex: 1}}>
               <Switch>{/*React router switch that determines which component to render based on the current url*/}
                 <Route exact path={prefix + "/"} component={HomePage} />
-                <Route path={prefix + "/SecondPage"} component={SecondPage} />
+                <Route path={prefix + "/about"} component={AboutPage} />
+                <Route path={prefix + "/resume"} component={ResumePage} />
+                <Route path={prefix + "/contact"} component={ContactPage} />
+                <Route path={prefix + "/projects"} component={ProjectsPage} />
                 <Route component={Error404} />
               </Switch>
             </main>
@@ -56,4 +62,3 @@ class App extends React.Component {
 }
 
 export default withStyles(styles)(App);
-
