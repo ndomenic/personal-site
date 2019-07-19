@@ -106,7 +106,7 @@ class NavBar extends React.Component {
                 <MenuIcon/>
               </IconButton>
               <div className={classes.grow} >
-                <Typography variant="h4" color="inherit">
+                <Typography variant="h5" color="inherit">
                   Nick Domenichini
                 </Typography>
               </div>
