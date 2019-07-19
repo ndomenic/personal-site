@@ -21,7 +21,12 @@ const styles = theme => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    height: '100vh'
+    height: '100vh',
+  },
+  main: {
+    flex: 1,
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(3),
   }
 });
 
@@ -44,7 +49,7 @@ class App extends React.Component {
             <header>
               <NavBar/>
             </header>
-            <main style={{flex: 1}}>
+            <main style={classes.main}>
               <Switch>{/*React router switch that determines which component to render based on the current url*/}
                 <Route exact path={prefix + "/"} component={HomePage} />
                 <Route path={prefix + "/about"} component={AboutPage} />
