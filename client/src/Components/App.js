@@ -49,7 +49,7 @@ class App extends React.Component {
             <header>
               <NavBar/>
             </header>
-            <main style={classes.main}>
+            <main className={classes.main}>
               <Switch>{/*React router switch that determines which component to render based on the current url*/}
                 <Route exact path={prefix + "/"} component={HomePage} />
                 <Route path={prefix + "/about"} component={AboutPage} />
