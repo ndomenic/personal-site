@@ -1,0 +1,71 @@
+{
+  "Skills": [
+    {
+      "title": "Languages",
+      "list": "C, JavaScript (ES6), Java 8, Python 3, SQL, TeX, VBA, Fortran"
+    },
+    {
+      "title": "Web Design",
+      "list": "ReactJS (Material-UI, Redux), Node.js (Express.js, Passport.js), Angular.js, Pug/Jade, jQuery, HTML5, CSS3 (UI Kit, Materialize)"
+    },
+    {
+      "title": "DevOps",
+      "list": "Git, Docker, Apache, Nginx, MySQL, PostgreSQL, SQL Server"
+    },
+    {
+      "title": "Operating Systems",
+      "list": "	GNU/Linux (Ubuntu, Debian, Fedora), Microsoft Windows, MacOS, Android"
+    }
+  ],
+  "Experience": [
+    {
+      "title": "Undergraduate Research Assistant, Full-Stack Web Developer",
+      "company": "University of Guelph - School of Computer Science",
+      "location": "Guelph, Ontario",
+      "timePeriod": "May 2018 - Aug. 2018",
+      "bullets": [
+        "Worked on a research team as a full stack web developer on an e-learning web application for automated feedback of writing and programming assignments",
+        "Designed and implemented a modular survey system to help students decompose assignments and provided accompanying documentation",
+        "Created file parsing utilities to gather statistics of student submitted C files"
+      ]
+    },
+    {
+      "title": "Application & Systems Developer",
+      "company": "Domson Engineering and Inspection Ltd.",
+      "location": "Brampton, Ontario",
+      "timePeriod": "Sept. 2017 - Present",
+      "bullets": [
+        "Designed an implemented an electronic form system as a replacement for traditional pen & paper forms using Visual Basic for Applications",
+        "Created a training program for new users of the software",
+        "Wrote comprehensive software documentation"
+      ]
+    },
+    {
+      "title": "Administrative Assistant",
+      "company": "Domson Engineering and Inspection Ltd.",
+      "location": "Brampton, Ontario",
+      "timePeriod": "May 2017 - Aug. 2017",
+      "bullets": [
+        "Created client invoices and formalized daily written reports submitted by non-destructive inspection workers",
+        "Provided training to new office personnel",
+        "Regularly communicated with clients via telephone and emails to rectify information discrepencies and resolve issues",
+        "Created certificates for the continued use of cranes and other machinery"
+      ]
+    }
+  ],
+  "Education": [
+    {
+      "title": "Honours Bachelor of Computer Science, Minor in Business",
+      "company": "University of Guelph",
+      "location": "Guelph, Ontario",
+      "timePeriod": "Sept. 2016 - Present",
+      "bullets": [
+        "Received an entrance scholarship for an admission average greater than 85%",
+        "Expected graduation in May 2020",
+        "Cumulative GPA of 3.0",
+        "Earned an 89% final average in Software Systems Development & Integration",
+        "Earned an 85% final average in Structure/Application of Microcomputers"
+      ]
+    }
+  ]
+}
