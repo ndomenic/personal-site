@@ -2,6 +2,8 @@ import React from 'react';
 import { withStyles } from "@material-ui/core/styles";
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import Fab from '@material-ui/core/Fab';
+import Icon from '@material-ui/core/Icon';
 
 const styles = theme => ({
   centered: {
@@ -18,7 +20,15 @@ const styles = theme => ({
       color: 'black',
       textDecoration: 'none'
     }
-  }
+  },
+  fab: {
+    margin: 0,
+    top: 'auto',
+    right: 24,
+    bottom: 24,
+    left: 'auto',
+    position: 'fixed',
+  },
 });
 
 class ResumePage extends React.Component {
@@ -38,6 +48,9 @@ class ResumePage extends React.Component {
             <a href="tel:416-688-9726" >(416)-688-9726</a> | <a href="mailto:ndomenic@uoguelph.ca">ndomenic@uoguelph.ca</a> | <a href="https://domenichini.ca">domenichini.ca</a>
           </Typography>
         </div>
+        <Fab color="secondary" aria-label="Download Resume" className={classes.fab}>
+          <Icon>file_download</Icon>
+        </Fab>
       </Container>
     )
   }

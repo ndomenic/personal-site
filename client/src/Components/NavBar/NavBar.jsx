@@ -95,7 +95,7 @@ class NavBar extends React.Component {
     return (
       <div className={classes.root}>
         <HideOnScroll {...this.props}>
-          <AppBar color="secondary">
+          <AppBar color="primary">
             <Toolbar>
               <IconButton
                 onClick={this.handleClickOpen}

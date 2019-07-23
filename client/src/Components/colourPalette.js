@@ -1,8 +1,8 @@
 exports.palette = {
-  secondary: {
+  primary: {
     main: '#3f51b5'
   },
-  primary: {
+  secondary: {
 	  main: '#ff1744'
   }
 }
