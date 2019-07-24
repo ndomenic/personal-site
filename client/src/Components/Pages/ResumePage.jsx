@@ -1,9 +1,12 @@
 import React from 'react';
 import { withStyles } from "@material-ui/core/styles";
+import { map } from 'lodash';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Fab from '@material-ui/core/Fab';
 import Icon from '@material-ui/core/Icon';
+import Grid from '@material-ui/core/Grid';
+import resumeJson from './resume.json';
 
 const styles = theme => ({
   centered: {
@@ -48,6 +51,32 @@ class ResumePage extends React.Component {
             <a href="tel:416-688-9726" >(416)-688-9726</a> | <a href="mailto:ndomenic@uoguelph.ca">ndomenic@uoguelph.ca</a> | <a href="https://domenichini.ca">domenichini.ca</a>
           </Typography>
         </div>
+        {map(resumeJson, (sectionData, sectionHeader) => {
+          console.log(sectionData);
+          return (
+            <React.Fragment key={sectionHeader}>
+              <Typography variant="h5" className={classes.heading} gutterBottom>
+                {sectionHeader}
+              </Typography>
+              <hr/>
+              {sectionHeader === 'Skills' ? (
+                <Grid container spacing={3}>
+                  <Grid item xs={3}>
+                    <Typography variant="subtitle1" style={{fontWeight: 'bold'}} gutterBottom>
+                      {sectionHeader}:
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={9}>
+                    <Typography variant="subtitle1" gutterBottom>
+                      {sectionHeader}
+                    </Typography>
+                  </Grid>
+                </Grid>
+              ): (
+                <React.Fragment></React.Fragment>
+              )}
+            </React.Fragment> 
+        )})}
         <Fab color="secondary" aria-label="Download Resume" className={classes.fab}>
           <Icon>file_download</Icon>
         </Fab>
