@@ -59,22 +59,26 @@ class ResumePage extends React.Component {
                 {sectionHeader}
               </Typography>
               <hr/>
-              {sectionHeader === 'Skills' ? (
-                <Grid container spacing={3}>
-                  <Grid item xs={3}>
-                    <Typography variant="subtitle1" style={{fontWeight: 'bold'}} gutterBottom>
-                      {sectionHeader}:
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={9}>
-                    <Typography variant="subtitle1" gutterBottom>
-                      {sectionHeader}
-                    </Typography>
-                  </Grid>
-                </Grid>
-              ): (
-                <React.Fragment></React.Fragment>
-              )}
+              {sectionData.map((entry, index) => (
+                <React.Fragment container spacing={3} key={index}>
+                  {sectionHeader === 'Skills' ? (
+                    <React.Fragment>
+                      <Grid item xs={3}>
+                        <Typography variant="subtitle1" style={{fontWeight: 'bold'}} gutterBottom>
+                          {entry.title}:
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={9}>
+                        <Typography variant="subtitle1" gutterBottom>
+                          {entry.list}
+                        </Typography>
+                      </Grid>
+                    </React.Fragment>
+                  ): (
+                    <React.Fragment></React.Fragment>
+                  )}
+                </React.Fragment>
+              ))}
             </React.Fragment> 
         )})}
         <Fab color="secondary" aria-label="Download Resume" className={classes.fab}>
