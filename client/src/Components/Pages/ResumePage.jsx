@@ -6,6 +6,7 @@ import Container from '@material-ui/core/Container';
 import Fab from '@material-ui/core/Fab';
 import Icon from '@material-ui/core/Icon';
 import Grid from '@material-ui/core/Grid';
+import grey from '@material-ui/core/colors/grey'
 import resumeJson from './resume.json';
 
 const styles = theme => ({
@@ -51,36 +52,64 @@ class ResumePage extends React.Component {
             <a href="tel:416-688-9726" >(416)-688-9726</a> | <a href="mailto:ndomenic@uoguelph.ca">ndomenic@uoguelph.ca</a> | <a href="https://domenichini.ca">domenichini.ca</a>
           </Typography>
         </div>
-        {map(resumeJson, (sectionData, sectionHeader) => {
-          console.log(sectionData);
-          return (
-            <React.Fragment key={sectionHeader}>
-              <Typography variant="h5" className={classes.heading} gutterBottom>
-                {sectionHeader}
-              </Typography>
-              <hr/>
-              {sectionData.map((entry, index) => (
-                <React.Fragment container spacing={3} key={index}>
-                  {sectionHeader === 'Skills' ? (
-                    <React.Fragment>
-                      <Grid item xs={3}>
-                        <Typography variant="subtitle1" style={{fontWeight: 'bold'}} gutterBottom>
-                          {entry.title}:
-                        </Typography>
-                      </Grid>
+        {map(resumeJson, (sectionData, sectionHeader) => (
+          <React.Fragment key={sectionHeader}>
+            <Typography variant="h5" className={classes.heading} gutterBottom>
+              {sectionHeader}
+            </Typography>
+            <hr/>
+            {sectionData.map((entry, index) => (
+              <React.Fragment key={index}>
+                {sectionHeader === 'Skills' ? (
+                  <Grid container spacing={2}>
+                    <Grid item xs={3}>
+                      <Typography variant="subtitle1" style={{fontWeight: 'bold'}} gutterBottom>
+                        {entry.title}:
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={9}>
+                      <Typography variant="subtitle1" gutterBottom>
+                        {entry.list}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                ) : (
+                  <React.Fragment>
+                    <Grid container spacing={2}>
                       <Grid item xs={9}>
-                        <Typography variant="subtitle1" gutterBottom>
-                          {entry.list}
+                        <Typography variant="subtitle1" style={{fontWeight: 'bold'}} gutterBottom>
+                          {entry.title}
                         </Typography>
                       </Grid>
-                    </React.Fragment>
-                  ): (
-                    <React.Fragment></React.Fragment>
-                  )}
-                </React.Fragment>
-              ))}
-            </React.Fragment> 
-        )})}
+                      <Grid item xs={3}>
+                        <Typography variant="subtitle1" style={{textAlign: 'right'}} gutterBottom>
+                          {entry.location}
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                    <Grid container spacing={2}>
+                      <Grid item xs={9}>
+                        <Typography variant="subtitle1" style={{fontStyle: 'italic', color: grey[600]}} gutterBottom>
+                          {entry.company}
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={3}>
+                        <Typography variant="subtitle1" style={{textAlign: 'right', fontStyle: 'italic', color: grey[600]}} gutterBottom>
+                          {entry.timePeriod}
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                    <ul style={{paddingLeft: '35px'}}>
+                      {entry.bullets.map((bullet, index) => (
+                        <li key={index}>{bullet}</li>
+                      ))}
+                    </ul>
+                  </React.Fragment>
+                )}
+              </React.Fragment>
+            ))}
+          </React.Fragment> 
+        ))}
         <Fab color="secondary" aria-label="Download Resume" className={classes.fab}>
           <Icon>file_download</Icon>
         </Fab>
