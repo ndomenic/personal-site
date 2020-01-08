@@ -8,6 +8,7 @@ import Icon from '@material-ui/core/Icon';
 import Grid from '@material-ui/core/Grid';
 import grey from '@material-ui/core/colors/grey'
 import resumeJson from './resume.json';
+import resumePdf from './Resume.pdf';
 
 const styles = theme => ({
   centered: {
@@ -129,7 +130,7 @@ class ResumePage extends React.Component {
             ))}
           </React.Fragment> 
         ))}
-        <Fab color="secondary" aria-label="Download Resume" className={classes.fab} href="Resume.pdf">
+        <Fab color="secondary" aria-label="Download Resume" className={classes.fab} href={resumePdf} filename={'resume.pdf'} download>
           <Icon>file_download</Icon>
         </Fab>
       </Container>
