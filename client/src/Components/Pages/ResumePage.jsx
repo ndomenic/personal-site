@@ -25,6 +25,25 @@ const styles = theme => ({
       textDecoration: 'none'
     }
   },
+  title: {
+    fontWeight: 'bold'
+  },
+  location: {
+    [theme.breakpoints.up('sm')]: {
+      textAlign: 'right'
+    },
+  },
+  company: {
+    fontStyle: 'italic', 
+    color: grey[600]
+  },
+  timePeriod: {
+    [theme.breakpoints.up('sm')]: {
+      textAlign: 'right'
+    },
+    fontStyle: 'italic', 
+    color: grey[600]
+  },
   fab: {
     margin: 0,
     top: 'auto',
@@ -36,8 +55,8 @@ const styles = theme => ({
 });
 
 class ResumePage extends React.Component {
-  render() {
-    const {classes} = this.props;
+  render () {
+    const { classes } = this.props;
 
     return (
       <Container maxWidth="md">
@@ -46,10 +65,10 @@ class ResumePage extends React.Component {
             Nicholas Domenichini
           </Typography>
           <Typography variant="subtitle1" className={classes.address}>
-            1077 Gordon Street, Unit 320, Guelph, Ontario, N1G 0E3
+            Guelph, Ontario
           </Typography>
           <Typography variant="subtitle1" className={classes.contact} gutterBottom>
-            <a href="tel:416-688-9726" >(416)-688-9726</a> | <a href="mailto:ndomenic@uoguelph.ca">ndomenic@uoguelph.ca</a> | <a href="https://domenichini.ca">domenichini.ca</a>
+            <a href="tel:416-688-9726" >(416)-688-9726</a> | <a href="mailto:ndomenic@uoguelph.ca">ndomenic@uoguelph.ca</a>
           </Typography>
         </div>
         {map(resumeJson, (sectionData, sectionHeader) => (
@@ -63,7 +82,7 @@ class ResumePage extends React.Component {
                 {sectionHeader === 'Skills' ? (
                   <Grid container spacing={2}>
                     <Grid item xs={3}>
-                      <Typography variant="subtitle1" style={{fontWeight: 'bold'}} gutterBottom>
+                      <Typography variant="subtitle1" className={classes.title} gutterBottom>
                         {entry.title}:
                       </Typography>
                     </Grid>
@@ -75,26 +94,26 @@ class ResumePage extends React.Component {
                   </Grid>
                 ) : (
                   <React.Fragment>
-                    <Grid container spacing={2}>
-                      <Grid item xs={9}>
-                        <Typography variant="subtitle1" style={{fontWeight: 'bold'}} gutterBottom>
+                    <Grid container spacing={0}>
+                      <Grid item sm={9} xs={12}>
+                        <Typography variant="subtitle1" className={classes.title} gutterBottom>
                           {entry.title}
                         </Typography>
                       </Grid>
-                      <Grid item xs={3}>
-                        <Typography variant="subtitle1" style={{textAlign: 'right'}} gutterBottom>
+                      <Grid item sm={3} xs={12}>
+                        <Typography variant="subtitle1" className={classes.location} gutterBottom>
                           {entry.location}
                         </Typography>
                       </Grid>
                     </Grid>
-                    <Grid container spacing={2}>
-                      <Grid item xs={9}>
-                        <Typography variant="subtitle1" style={{fontStyle: 'italic', color: grey[600]}} gutterBottom>
+                    <Grid container spacing={0}>
+                      <Grid item sm={9} xs={12}>
+                        <Typography variant="subtitle1" className={classes.company} gutterBottom>
                           {entry.company}
                         </Typography>
                       </Grid>
-                      <Grid item xs={3}>
-                        <Typography variant="subtitle1" style={{textAlign: 'right', fontStyle: 'italic', color: grey[600]}} gutterBottom>
+                      <Grid item sm={3} xs={12}>
+                        <Typography variant="subtitle1" className={classes.timePeriod} gutterBottom>
                           {entry.timePeriod}
                         </Typography>
                       </Grid>
@@ -110,7 +129,7 @@ class ResumePage extends React.Component {
             ))}
           </React.Fragment> 
         ))}
-        <Fab color="secondary" aria-label="Download Resume" className={classes.fab}>
+        <Fab color="secondary" aria-label="Download Resume" className={classes.fab} href="Resume.pdf">
           <Icon>file_download</Icon>
         </Fab>
       </Container>

@@ -10,14 +10,25 @@
     },
     {
       "title": "DevOps",
-      "list": "Git, Docker, Apache, Nginx, MySQL, PostgreSQL, SQL Server"
+      "list": "Git, Docker, Apache, Nginx, MySQL, PostgreSQL, SQL Server, IIS"
     },
     {
       "title": "Operating Systems",
-      "list": "GNU/Linux (Ubuntu, Debian, Fedora), Microsoft Windows, MacOS, Android"
+      "list": "GNU/Linux (Debian, Fedora, Ubuntu), Microsoft Windows, MacOS, Android"
     }
   ],
   "Experience": [
+    {
+      "title": "Mobile Developer Intern",
+      "company": "National Logistics Services",
+      "location": "Mississauga, Ontario",
+      "timePeriod": "May 2019 - Dec. 2019",
+      "bullets": [
+        "Led development, integration, and testing of a billing automation web application",
+        "Designed and implemented the dynamic user interface for this application",
+        "Deployed this application as an internal tool for use by general managers and executives to control the automated billing process for clients"
+      ]
+    },
     {
       "title": "Undergraduate Research Assistant, Full-Stack Web Developer",
       "company": "University of Guelph - School of Computer Science",
@@ -33,23 +44,11 @@
       "title": "Application & Systems Developer",
       "company": "Domson Engineering and Inspection Ltd.",
       "location": "Brampton, Ontario",
-      "timePeriod": "Sept. 2017 - Present",
+      "timePeriod": "Sept. 2017 - April 2018",
       "bullets": [
-        "Designed an implemented an electronic form system as a replacement for traditional pen & paper forms using Visual Basic for Applications",
+        "Designed and implemented an electronic form system as a replacement for traditional pen & paper forms using Visual Basic for Applications",
         "Created a training program for new users of the software",
         "Wrote comprehensive software documentation"
-      ]
-    },
-    {
-      "title": "Administrative Assistant",
-      "company": "Domson Engineering and Inspection Ltd.",
-      "location": "Brampton, Ontario",
-      "timePeriod": "May 2017 - Aug. 2017",
-      "bullets": [
-        "Created client invoices and formalized daily written reports submitted by non-destructive inspection workers",
-        "Provided training to new office personnel",
-        "Regularly communicated with clients via telephone and emails to rectify information discrepencies and resolve issues",
-        "Created certificates for the continued use of cranes and other machinery"
       ]
     }
   ],
