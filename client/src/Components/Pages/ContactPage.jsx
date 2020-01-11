@@ -72,18 +72,18 @@ class ContactPage extends React.Component {
       <React.Fragment>
         <CssBaseline />
         <Container maxWidth="md">
-          <Paper className={classes.paper}>
-            <Typography variant="h5" component="h3">
-              Contact Me
-            </Typography>
-            <br/>
-            <Typography component="p">
+          <Typography variant="h4" component="h3">
+            Contact Me
+          </Typography>
+          <br/>
+          <Typography component="p">
             You can connect with me through any of the following mediums; 
             I usually reply to phone calls and emails the fastest. 
             If you want to meet up and have a chat with me, 
             I'm usually in the Guelph area and would love to grab a coffee. 
-            </Typography>
-            <br/>
+          </Typography>
+          <br/>
+          <Paper className={classes.paper}>
             <Grid container spacing={0}>
               <Grid item xs={12} sm={6}>
                 <List className={classes.list}>

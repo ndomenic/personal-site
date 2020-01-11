@@ -17,6 +17,10 @@ const styles = theme => ({
   heading: {
     color: '#5c6bc0'
   },
+  subHeading: {
+    color: '#5c6bc0',
+    marginTop: '16px'
+  },
   address: {
     fontStyle: 'italic'
   },
@@ -62,8 +66,8 @@ class ResumePage extends React.Component {
     return (
       <Container maxWidth="md">
         <div className={classes.centered}>
-          <Typography variant="h3" className={classes.heading} gutterBottom>
-            Nicholas Domenichini
+          <Typography variant="h3" className={classes.heading}>
+            Nick Domenichini
           </Typography>
           <Typography variant="subtitle1" className={classes.address}>
             Guelph, Ontario
@@ -74,7 +78,7 @@ class ResumePage extends React.Component {
         </div>
         {map(resumeJson, (sectionData, sectionHeader) => (
           <React.Fragment key={sectionHeader}>
-            <Typography variant="h5" className={classes.heading} gutterBottom>
+            <Typography variant="h5" className={classes.subHeading} gutterBottom>
               {sectionHeader}
             </Typography>
             <hr/>
