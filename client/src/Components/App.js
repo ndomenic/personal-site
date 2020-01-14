@@ -25,8 +25,6 @@ const styles = theme => ({
   },
   main: {
     flex: 1,
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
   }
 });
 

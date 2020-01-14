@@ -1,9 +1,12 @@
 import React from 'react';
 import { withStyles } from "@material-ui/core/styles";
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
-  root: {
-    padding: '24px'
+  verticalPadding: {
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(3),
   }
 });
 
@@ -12,9 +15,12 @@ class AboutPage extends React.Component {
     const {classes} = this.props;
 
     return (
-      <div className={classes.root}>
-        <h1>About Me</h1>
-      </div>
+      <Container maxWidth="md" className={classes.verticalPadding}>
+        <Typography variant="h4" component="h3">
+          About Me
+        </Typography>
+        <br/>
+      </Container>
     )
   }
 }

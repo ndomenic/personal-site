@@ -61,6 +61,10 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
     paddingTop: '0',
     paddingBottom: '0'
+  },
+  verticalPadding: {
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(3),
   }
 });
 
@@ -71,7 +75,7 @@ class ContactPage extends React.Component {
     return (
       <React.Fragment>
         <CssBaseline />
-        <Container maxWidth="md">
+        <Container maxWidth="md" className={classes.verticalPadding}>
           <Typography variant="h4" component="h3">
             Contact Me
           </Typography>

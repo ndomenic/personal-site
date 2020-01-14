@@ -57,6 +57,10 @@ const styles = theme => ({
     left: 'auto',
     position: 'fixed',
   },
+  verticalPadding: {
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(3),
+  }
 });
 
 class ResumePage extends React.Component {
@@ -64,7 +68,7 @@ class ResumePage extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Container maxWidth="md">
+      <Container maxWidth="md" className={classes.verticalPadding}>
         <div className={classes.centered}>
           <Typography variant="h3" className={classes.heading}>
             Nick Domenichini

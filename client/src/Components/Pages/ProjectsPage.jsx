@@ -53,6 +53,10 @@ const styles = theme => ({
   },
   cardDescription: {
     marginTop: '12px'
+  },
+  verticalPadding: {
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(3),
   }
 });
 
@@ -61,7 +65,7 @@ class ProjectsPage extends React.Component {
     const {classes} = this.props;
 
     return (
-      <Container maxWidth="md">
+      <Container maxWidth="md" className={classes.verticalPadding}>
         <Typography variant="h4" component="h3">
           Personal Projects
         </Typography>
@@ -86,7 +90,7 @@ class ProjectsPage extends React.Component {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small">View Git Repo</Button>
+                  <Button size="small" href={element.link}>View Git Repo</Button>
                 </CardActions>
               </Card>
             </Grid>
