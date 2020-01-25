@@ -11,28 +11,29 @@ import Chip from '@material-ui/core/Chip';
 
 const projectsList = [
   {
-    title: 'Project 1',
-    languages: ['JavaScript', 'Python'],
-    description: 'This is some description. probably long.',
-    link: 'https://google.com'
+    title: 'Personal Website',
+    languages: ['ReactJS', 'Material-UI', 'JavaScript'],
+    description: 'This is the site that you\'re currently looking at. If you\'d like to see the source code, it\'s all available on my GitHub in the repository linked below.',
+    link: 'https://github.com/ndomenic/personal-site',
+    liveLink: 'https://github.com/ndomenic/personal-site'
   },
   {
-    title: 'Project 2',
-    languages: ['C'],
-    description: 'This is some description. Also probably long.',
-    link: 'https://bing.com'
+    title: 'England/Wales Family Trip',
+    languages: ['ReactJS', 'Material-UI', 'Javascript'],
+    description: 'This website uses Google\'s Maps API to show a customized map of England and Wales with markers in various places we visited. Each marker is clickable, bringing up a brief description of what we did in each location with pictures to accompany it.',
+    link: 'https://github.com/ndomenic/travel-log'
   },
   {
-    title: 'Project 3',
-    languages: ['C'],
-    description: 'This is some description. Also probably long.',
-    link: 'https://bing.com'
+    title: 'Server API',
+    languages: ['Node.js', 'JavaScript', 'MySQL'],
+    description: 'The Node.js server that runs all of the API endpoints for my web projects. While there is no SQL code in the below repository, this server links to the MySQL database that I have setup on my personal server.',
+    link: 'https://github.com/ndomenic/personal-site'
   },
   {
-    title: 'Project 4',
+    title: 'LibADT',
     languages: ['C'],
-    description: 'This is some description. Also probably long.',
-    link: 'https://bing.com'
+    description: 'A library of data structures written in the C language complying to the C11 standard. I\'ve frequently used this library in my various C projects throughout university, as its been extremely reliable with no memory leaks.',
+    link: 'https://github.com/ndomenic/libADT'
   },
 ]
 
@@ -85,12 +86,17 @@ class ProjectsPage extends React.Component {
                   {element.languages.map((language, index) => (
                     <Chip className={classes.chip} label={language} />
                   ))}
-                  <Typography className={classes.cardDescription} variant="p" component="p">
+                  <Typography className={classes.cardDescription} component="p">
                     {element.description}
                   </Typography>
                 </CardContent>
                 <CardActions>
                   <Button size="small" href={element.link}>View Git Repo</Button>
+                  {element.liveLink ? (
+                    <Button size="small" href={element.liveLink}>Live Demo</Button> 
+                  ) : (
+                    <React.Fragment/>
+                  )}
                 </CardActions>
               </Card>
             </Grid>
