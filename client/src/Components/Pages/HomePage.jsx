@@ -1,14 +1,10 @@
 import React from 'react';
 import { withStyles } from "@material-ui/core/styles";
-import photo from './Photos/homePage.jpg'
+import photo from './Photos/homePage.png'
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Icon from '@material-ui/core/Icon';
 import Grid from '@material-ui/core/Grid';
-import {address} from '../config';
-
-let prefix = '';
-if (process.env.NODE_ENV === 'production') prefix = address;
 
 const highlights = [
   {
@@ -88,7 +84,7 @@ class HomePage extends React.Component {
               </Grid>
             ))}
           </Grid>
-          <Typography variant="h6" component="h6" align="center" className={classes.heading}>
+          <Typography component="h5" align="center" className={classes.heading}>
             This website is my little corner of the internet. Feel free to take a look around, <a href="/about">get to know me better</a>, or check out some of my <a href="/projects">side projects</a>.
           </Typography>
         </Container>

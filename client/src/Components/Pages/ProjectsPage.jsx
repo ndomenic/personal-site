@@ -13,9 +13,8 @@ const projectsList = [
   {
     title: 'Personal Website',
     languages: ['ReactJS', 'Material-UI', 'JavaScript'],
-    description: 'This is the site that you\'re currently looking at. If you\'d like to see the source code, it\'s all available on my GitHub in the repository linked below.',
-    link: 'https://github.com/ndomenic/personal-site',
-    liveLink: 'https://github.com/ndomenic/personal-site'
+    description: 'This is the site that you\'re currently looking at, home to my online portfolio. If you\'d like to see the source code, it\'s all available on my GitHub in the repository linked below.',
+    link: 'https://github.com/ndomenic/personal-site'
   },
   {
     title: 'England/Wales Family Trip',
