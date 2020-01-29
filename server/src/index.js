@@ -1,9 +1,7 @@
-const {address, endpointPreface} = require('./config');
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const port = 80;
 const buildDir = path.join(__dirname, '..', '..', 'client', 'build');
 const app = express();
 
@@ -13,24 +11,25 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.enable('trust proxy');
 app.use(cors());
 
-//Sample API get request
-app.get(`${endpointPreface}/getData`, (req, res, next) => {
-  //Sends some sample data
-  res.json({'sample': 'The server is currently running in ' + process.env.NODE_ENV + ' mode'});
-})
+//Overwrite the serving of static image files, instead getting the client to download the resume pdf
+app.get('/personalSite/resume.pdf', function(req, res){
+  res.download(__dirname + '/files/Resume.pdf');
+});
+
+//Serve the static image files
+app.use(`/personalSite`, express.static(__dirname + '/files'));
 
 //Configure express to serve the static files 
-app.use(`${address}`, express.static(buildDir))
+app.use(`/`, express.static(buildDir));
 
 //Serve the static html if none of the above endpoints were hit
-app.get(`${address}/*`, (req, res, next) => {
+app.get(`/*`, (req, res, next) => {
   res.sendFile(path.join(buildDir, 'index.html'), (err) => {
     if (err) {
-      console.log(err);
       res.json(err);
     }
-  })
-})
+  });
+});
 
 //Listen for requests on the specified port 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}`));

@@ -12,10 +12,6 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {palette} from './colourPalette'
-import {address} from './config';
-
-let prefix = '';
-if (process.env.NODE_ENV === 'production') prefix = address;
 
 const styles = theme => ({
   root: {
@@ -49,11 +45,11 @@ class App extends React.Component {
             </header>
             <main className={classes.main}>
               <Switch>{/*React router switch that determines which component to render based on the current url*/}
-                <Route exact path={prefix + "/"} component={HomePage} />
-                <Route path={prefix + "/about"} component={AboutPage} />
-                <Route path={prefix + "/resume"} component={ResumePage} />
-                <Route path={prefix + "/contact"} component={ContactPage} />
-                <Route path={prefix + "/projects"} component={ProjectsPage} />
+                <Route exact path={"/"} component={HomePage} />
+                <Route path={"/about"} component={AboutPage} />
+                <Route path={"/resume"} component={ResumePage} />
+                <Route path={"/contact"} component={ContactPage} />
+                <Route path={"/projects"} component={ProjectsPage} />
                 <Route component={Error404} />
               </Switch>
             </main>

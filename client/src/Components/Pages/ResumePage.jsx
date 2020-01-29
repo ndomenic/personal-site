@@ -8,7 +8,6 @@ import Icon from '@material-ui/core/Icon';
 import Grid from '@material-ui/core/Grid';
 import grey from '@material-ui/core/colors/grey'
 import resumeJson from './resume.json';
-import resumePdf from './Resume.pdf';
 
 const styles = theme => ({
   centered: {
@@ -66,7 +65,8 @@ const styles = theme => ({
 class ResumePage extends React.Component {
   render () {
     const { classes } = this.props;
-
+    const resumePdf = `${process.env.REACT_APP_ADDRESS}/${process.env.REACT_APP_API_NAME}/resume.pdf`
+    
     return (
       <Container maxWidth="md" className={classes.verticalPadding}>
         <div className={classes.centered}>
@@ -138,7 +138,7 @@ class ResumePage extends React.Component {
             ))}
           </React.Fragment> 
         ))}
-        <Fab color="secondary" aria-label="Download Resume" className={classes.fab} href={resumePdf} filename={'resume.pdf'} download>
+        <Fab color="secondary" aria-label="Download Resume" className={classes.fab} href={resumePdf} download>
           <Icon>file_download</Icon>
         </Fab>
       </Container>

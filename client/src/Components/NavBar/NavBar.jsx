@@ -14,10 +14,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Icon from '@material-ui/core/Icon';
-import {address} from '../config';
-
-let prefix = '';
-if (process.env.NODE_ENV === 'production') prefix = address;
 
 const styles = {
   root: {
@@ -40,27 +36,27 @@ const items = [
     {
       text: 'Home',
       icon: <Icon>home</Icon>,
-      path: prefix + '/'
+      path: '/'
     },
     {
       text: 'About',
       icon: <Icon>info</Icon>,
-      path: prefix + '/about'
+      path: '/about'
     },
     {
       text: 'Resume',
       icon: <Icon>description</Icon>,
-      path: prefix + '/resume'
+      path: '/resume'
     },
     {
       text: 'Contact',
       icon: <Icon>question_answer</Icon>,
-      path: prefix + '/contact'
+      path: '/contact'
     },
     {
       text: 'Projects',
       icon: <Icon>code</Icon>,
-      path: prefix + '/projects'
+      path: '/projects'
     }
   ];
   

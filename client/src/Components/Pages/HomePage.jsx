@@ -1,6 +1,5 @@
 import React from 'react';
 import { withStyles } from "@material-ui/core/styles";
-import photo from './Photos/homePage.png'
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Icon from '@material-ui/core/Icon';
@@ -60,6 +59,8 @@ const styles = theme => ({
 class HomePage extends React.Component {
   render() {
     const {classes} = this.props;
+    const photo = `${process.env.REACT_APP_ADDRESS}/${process.env.REACT_APP_API_NAME}/homePage.png`
+
     return (
       <React.Fragment>
         <div className={classes.imageDivOuter}>
