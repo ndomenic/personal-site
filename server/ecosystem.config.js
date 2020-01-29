@@ -5,7 +5,7 @@ module.exports = {
     autorestart: true,
     watch: false,
     env: {
-      PORT: 3000,
+      PORT: 8000,
       NODE_ENV: "production",
     },
   }],
