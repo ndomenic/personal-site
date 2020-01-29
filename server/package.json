@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=development PORT=80 nodemon src/index.js",
+    "test": "cross-env NODE_ENV=development PORT=3000 nodemon src/index.js",
     "start": "pm2 start ecosystem.config.js",
-    "stop": "pm2 stop 'Personal-Site'"
+    "stop": "pm2 stop Personal-Site"
   },
   "keywords": [],
   "author": "",
