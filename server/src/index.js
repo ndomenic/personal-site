@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const https = require('https')
+const fs = require('fs')
 const buildDir = path.join(__dirname, '..', '..', 'client', 'build');
 const app = express();
 
@@ -32,4 +34,7 @@ app.get(`/*`, (req, res, next) => {
 });
 
 //Listen for requests on the specified port 
-app.listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}`));
+https.createServer({
+  key: fs.readFileSync('server.key'),
+  cert: fs.readFileSync('server.cert')
+}, app).listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}`));
