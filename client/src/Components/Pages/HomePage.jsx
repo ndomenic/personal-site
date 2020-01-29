@@ -50,6 +50,12 @@ const styles = theme => ({
   subHeading: {
     marginBottom: '12px',
   },
+  blurb: {
+    marginTop: '24px',
+    marginBottom: '36px',
+    fontSize: '0.9rem',
+    fontWeight: '425'
+  },
   icon: {
     scale: '275%',
     margin: '24px'
@@ -85,7 +91,7 @@ class HomePage extends React.Component {
               </Grid>
             ))}
           </Grid>
-          <Typography component="h5" align="center" className={classes.heading}>
+          <Typography component="h5" align="center" className={classes.blurb}>
             This website is my little corner of the internet. Feel free to take a look around, <a href="/about">get to know me better</a>, or check out some of my <a href="/projects">side projects</a>.
           </Typography>
         </Container>
