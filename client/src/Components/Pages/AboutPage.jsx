@@ -6,6 +6,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
+import Alert from '@material-ui/lab/Alert';
 
 const aboutMeList = [
   {
@@ -72,6 +73,10 @@ class AboutPage extends React.Component {
           About Me
         </Typography>
         <br/>
+
+        <Alert severity="info">This page is currently under construction, and should be finished in the next few days. In the meantime, you can keep checking back as it gets updated.</Alert>
+        <br/>
+
         <Grid container spacing={3}>
           {aboutMeList.map((element, index) => (
             <Grid item xs={12}>
