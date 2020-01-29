@@ -23,16 +23,16 @@ const projectsList = [
     link: 'https://github.com/ndomenic/travel-log'
   },
   {
-    title: 'Server API',
-    languages: ['Node.js', 'JavaScript', 'MySQL'],
-    description: 'The Node.js server that runs all of the API endpoints for my web projects. While there is no SQL code in the below repository, this server links to the MySQL database that I have setup on my personal server.',
-    link: 'https://github.com/ndomenic/personal-site'
-  },
-  {
     title: 'LibADT',
     languages: ['C'],
     description: 'A library of data structures written in the C language complying to the C11 standard. I\'ve frequently used this library in my various C projects throughout university, as its been extremely reliable with no memory leaks.',
     link: 'https://github.com/ndomenic/libADT'
+  },
+  {
+    title: 'Reverse Proxy Server',
+    languages: ['Node.js', 'JavaScript'],
+    description: 'The Node.js server that runs all of the reverse proxy requests required to run the multiple apps that I have running on my server. It\'s quite simple in nature, simply re-routing all requests to a url to the proper destination.',
+    link: 'https://github.com/ndomenic/reverse-proxy-server'
   },
 ]
 
