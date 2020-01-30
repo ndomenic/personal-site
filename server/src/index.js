@@ -7,11 +7,6 @@ const fs = require('fs')
 const buildDir = path.join(__dirname, '..', '..', 'client', 'build');
 const app = express();
 
-//Cert
-const privateKey = fs.readFileSync('/etc/letsencrypt/live/yourdomain.com/privkey.pem', 'utf8');
-const certificate = fs.readFileSync('/etc/letsencrypt/live/yourdomain.com/cert.pem', 'utf8');
-const ca = fs.readFileSync('/etc/letsencrypt/live/yourdomain.com/chain.pem', 'utf8');
-
 //Setup the express application
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -38,14 +33,19 @@ app.get(`/*`, (req, res, next) => {
   });
 });
 
-//Listen for http requests on the specified port 
-httpServer.listen(80, () => {
-	console.log('HTTP Server running on port 80');
-});
+if (process.env.NODE_ENV == 'production') {
+  //Certificate
+  const privateKey = fs.readFileSync('/etc/letsencrypt/live/domenichini.ca/privkey.pem', 'utf8');
+  const certificate = fs.readFileSync('/etc/letsencrypt/live/domenichini.ca/cert.pem', 'utf8');
+  const ca = fs.readFileSync('/etc/letsencrypt/live/domenichini.ca/chain.pem', 'utf8');
 
-//Listen for https requests on the specified port 
-https.createServer({
-	key: privateKey,
-	cert: certificate,
-	ca: ca
-}, app).listen(443, () => console.log(`Listening on port 443`));
+  https.createServer({
+    key: privateKey,
+    cert: certificate,
+    ca: ca
+  }, app).listen(8000, () => console.log(`Listening on port 8000`));
+} else {
+  http.createServer(app).listen(8000, () => {
+    console.log('HTTP Server running on port 8000');
+  });
+}
