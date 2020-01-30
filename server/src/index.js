@@ -2,8 +2,9 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const https = require('https')
-const fs = require('fs')
+const https = require('https');
+const http = require('http');
+const fs = require('fs');
 const buildDir = path.join(__dirname, '..', '..', 'client', 'build');
 const app = express();
 
@@ -45,7 +46,5 @@ if (process.env.NODE_ENV == 'production') {
     ca: ca
   }, app).listen(8000, () => console.log(`Listening on port 8000`));
 } else {
-  http.createServer(app).listen(8000, () => {
-    console.log('HTTP Server running on port 8000');
-  });
+  http.createServer(app).listen(8000, () => console.log('HTTP Server running on port 8000'));
 }
