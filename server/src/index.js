@@ -7,6 +7,11 @@ const fs = require('fs')
 const buildDir = path.join(__dirname, '..', '..', 'client', 'build');
 const app = express();
 
+//Cert
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/yourdomain.com/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/yourdomain.com/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/yourdomain.com/chain.pem', 'utf8');
+
 //Setup the express application
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -33,8 +38,14 @@ app.get(`/*`, (req, res, next) => {
   });
 });
 
-//Listen for requests on the specified port 
+//Listen for http requests on the specified port 
+httpServer.listen(80, () => {
+	console.log('HTTP Server running on port 80');
+});
+
+//Listen for https requests on the specified port 
 https.createServer({
-  key: fs.readFileSync('server.key'),
-  cert: fs.readFileSync('server.cert')
-}, app).listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}`));
+	key: privateKey,
+	cert: certificate,
+	ca: ca
+}, app).listen(443, () => console.log(`Listening on port 443`));
