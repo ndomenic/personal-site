@@ -27,12 +27,12 @@ const aboutMeList = [
   }, 
   {
     title: 'Home Is Where The Family Is',
-    description: <Typography component="p">Lorem ipsum.</Typography>,
+    description: <Typography component="p">While I absolutely love travelling, and there is a small part of me that wants to go live somewhere else and explore living in another part of the world, I simply couldn't give up my family life. My family are some of the most awesome and supportive people that I know, and I am very lucky to have them in my life. I am super fortunate to have such an amazing family, and I won't be leaving to GTA anytime soon - how else would I keep seeing them all?</Typography>,
     image: 'https://media.istockphoto.com/photos/misty-summer-mountain-hills-landscape-picture-id509636590?k=6&m=509636590&s=612x612&w=0&h=0n261AbJgmWI5cUWLUwpcRAbuGfmbWPF44tvPvErZXA='
   },
   {
     title: 'Dogs Are My Absolute Favourite',
-    description: <Typography component="p">Lorem ipsum.</Typography>,
+    description: <Typography component="p">I do like most animals, but dogs are by far the top of my favourites list. There's just something about those goofy, loving creatures that I absolutely adore - and the bigger the better. My family has a Springer Spaniel named Lexi, and she is definitely one of my favourite things about visiting my parts. I love her to bits, and I hope to have a dog of my own one day, perhaps I can fullfill my dream of owning a Bernese Mountain Dog.</Typography>,
     image: 'https://media.istockphoto.com/photos/misty-summer-mountain-hills-landscape-picture-id509636590?k=6&m=509636590&s=612x612&w=0&h=0n261AbJgmWI5cUWLUwpcRAbuGfmbWPF44tvPvErZXA='
   }
 ]
