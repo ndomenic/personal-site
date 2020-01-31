@@ -57,7 +57,7 @@ const styles = theme => ({
     fontWeight: '425'
   },
   icon: {
-    scale: '275%',
+    fontSize: '4rem',
     margin: '24px'
   }
 });
