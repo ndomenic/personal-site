@@ -44,19 +44,10 @@ const styles = theme => ({
   },
   image: {
     height: 275, 
-    width: 275,
-    float: 'right'
-  },
-  imageDiv: {
-    width: '30%'
+    width: '100%',
   },
   card: {
     display: 'flex',
-  },
-  details: {
-    display: 'flex',
-    flexDirection: 'column',
-    width: '70%'
   },
   content: {
     flex: '1 0 auto',
@@ -73,28 +64,26 @@ class AboutPage extends React.Component {
           About Me
         </Typography>
         <br/>
-
-        <Alert severity="info">This page is currently under construction, and should be finished in the next few days. In the meantime, you can keep checking back as it gets updated.</Alert>
-        <br/>
-
         <Grid container spacing={3}>
           {aboutMeList.map((element, index) => (
             <Grid item xs={12}>
               <Card className={classes.card}>
-                <div className={classes.details}>
-                  <CardContent className={classes.content}>
-                  <Typography variant="h6" component="h3">
-                      {element.title}
-                    </Typography>
-                    {element.description}
-                  </CardContent>
-                </div>
-                <div className={classes.imageDiv}>
-                  <CardMedia
-                    className={classes.image}
-                    image={element.image}
-                  />
-                </div>     
+                <Grid container spacing={1}>
+                  <Grid item md={8} sm= {7} xs={12}>
+                    <CardContent className={classes.content}>
+                    <Typography variant="h6" component="h3">
+                        {element.title}
+                      </Typography>
+                      {element.description}
+                    </CardContent>
+                  </Grid>
+                  <Grid item md={4} sm={5} xs={12}>
+                    <CardMedia
+                      className={classes.image}
+                      image={element.image}
+                    />
+                  </Grid>
+                </Grid>
               </Card>
             </Grid>
           ))}
