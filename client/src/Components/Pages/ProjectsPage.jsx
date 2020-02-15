@@ -18,7 +18,7 @@ const projectsList = [
   },
   {
     title: 'England/Wales Family Trip',
-    languages: ['ReactJS', 'Material-UI', 'Javascript'],
+    languages: ['ReactJS', 'Material-UI', 'JavaScript'],
     description: 'This website uses Google\'s Maps API to show a customized map of England and Wales with markers in various places we visited. Each marker is clickable, bringing up a brief description of what we did in each location with pictures to accompany it.',
     link: 'https://github.com/ndomenic/travel-log'
   },
