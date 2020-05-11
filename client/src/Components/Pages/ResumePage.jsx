@@ -127,11 +127,15 @@ class ResumePage extends React.Component {
                         </Typography>
                       </Grid>
                     </Grid>
-                    <ul style={{paddingLeft: '35px'}}>
-                      {entry.bullets.map((bullet, index) => (
-                        <li key={index}>{bullet}</li>
-                      ))}
-                    </ul>
+                    {entry.bullets ? (
+                      <ul style={{paddingLeft: '35px'}}>
+                        {entry.bullets.map((bullet, index) => (
+                          <li key={index}>{bullet}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <React.Fragment/> 
+                    )}
                   </React.Fragment>
                 )}
               </React.Fragment>

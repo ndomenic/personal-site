@@ -54,17 +54,10 @@
   ],
   "Education": [
     {
-      "title": "Honours Bachelor of Computer Science, Minor in Business",
+      "title": "Honours B.Comp, Major in Computer Science, Minor in Business",
       "company": "University of Guelph",
       "location": "Guelph, Ontario",
-      "timePeriod": "Sept. 2016 - Present",
-      "bullets": [
-        "Received an entrance scholarship for an admission average greater than 85%",
-        "Expected graduation in May 2020",
-        "Cumulative GPA of 3.0",
-        "Earned an 89% final average in Software Systems Development & Integration",
-        "Earned an 85% final average in Structure/Application of Microcomputers"
-      ]
+      "timePeriod": "Sept. 2016 - May 2020"
     }
   ]
 }
