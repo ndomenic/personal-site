@@ -16,7 +16,7 @@ const list1 = [
   {
     icon: <Icon>email</Icon>,
     primary: 'Email',
-    secondary: <a href="mailto:ndomenic@uoguelph.ca">ndomenic@uoguelph.ca</a>
+    secondary: <a href="mailto:nicholas.domenichini@gmail.com">nicholas.domenichini@gmail.com</a>
   },
   {
     icon: <Icon>code</Icon>,

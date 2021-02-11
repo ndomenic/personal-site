@@ -88,7 +88,7 @@ class ResumePage extends React.Component {
             <hr/>
             {sectionData.map((entry, index) => (
               <React.Fragment key={index}>
-                {sectionHeader === 'Skills' ? (
+                {sectionHeader === 'Technical Skills' ? (
                   <Grid container spacing={2}>
                     <Grid item xs={3}>
                       <Typography variant="subtitle1" className={classes.title} gutterBottom>

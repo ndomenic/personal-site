@@ -1,23 +1,29 @@
 {
-  "Skills": [
+  "Technical Skills": [
     {
-      "title": "Languages",
-      "list": "C, JavaScript (ES6), Java 8, Python 3, SQL, TeX, VBA, Fortran"
-    },
-    {
-      "title": "Web Design",
-      "list": "ReactJS (Material-UI, Redux), Node.js (Express.js, Passport.js), Angular.js, Pug/Jade, jQuery, HTML5, CSS3 (UI Kit, Materialize)"
+      "title": "Programming",
+      "list": "JavaScript (React.js, React Native, Node.js), C, Java 8, Python 3, SQL, Bash, HTML/CSS"
     },
     {
       "title": "DevOps",
-      "list": "AWS, Azure, Git, Docker, Apache, Nginx, MySQL, PostgreSQL, SQL Server, IIS"
+      "list": "AWS, Azure, Git, Docker, Apache, Nginx, IIS, MySQL, PostgreSQL, SQL Server, Firebase"
     },
     {
       "title": "Operating Systems",
-      "list": "GNU/Linux (Debian, Fedora, Ubuntu), Microsoft Windows, MacOS, Android"
+      "list": "GNU/Linux (Debian, Fedora, Ubuntu), Microsoft Windows, MacOS, Android, iOS"
     }
   ],
   "Experience": [
+{
+      "title": "Mobile Developer (Contract)",
+      "company": "National Logistics Services",
+      "location": "Mississauga, Ontario",
+      "timePeriod": "Oct. 2020 - Present",
+      "bullets": [
+        "Leveraged the full stack of React Native, Node.js, and Microsoft SQL Server to implement a news bulletin system into a COVID-19 screening application, thus streamlining communication between upper management and employees",
+        "Utilized Python scripting to automatically register all employees with an Okta authentication solution, allowing employees access to the mobile application"
+      ]
+    },
     {
       "title": "Mobile Developer Intern",
       "company": "National Logistics Services",
@@ -25,7 +31,6 @@
       "timePeriod": "May 2019 - Dec. 2019",
       "bullets": [
         "Led development, integration, and testing of a billing automation web application to greatly reduce IT overheads and improve department workflow",
-        "Designed and implemented the dynamic user interface for this application",
         "Deployed this application as an internal tool for use by general managers and executives to control the automated billing process for clients",
         "Led product meetings and discussions with various company executives "
       ]

@@ -76,7 +76,7 @@ class HomePage extends React.Component {
         </div>
         <Container maxWidth="md">
           <Typography variant="h5" align="center" className={classes.heading}>
-            Hi, I'm Nick, Computer Science student and Full Stack software developer
+            Hi, I'm Nick; Full Stack software developer, dog lover, and car enthusiast.
           </Typography>
           <Grid container spacing={3}>
             {highlights.map((element) => (
