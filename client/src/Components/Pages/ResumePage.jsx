@@ -77,7 +77,7 @@ class ResumePage extends React.Component {
             Guelph, Ontario
           </Typography>
           <Typography variant="subtitle1" className={classes.contact} gutterBottom>
-            <a href="tel:416-688-9726" >(416)-688-9726</a> | <a href="mailto:ndomenic@uoguelph.ca">ndomenic@uoguelph.ca</a>
+            <a href="tel:416-688-9726" >(416)-688-9726</a> | <a href="mailto:nick.domenichini@gmail.com">nick.domenichini@gmail.com</a>
           </Typography>
         </div>
         {map(resumeJson, (sectionData, sectionHeader) => (

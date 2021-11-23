@@ -16,7 +16,7 @@ const list1 = [
   {
     icon: <Icon>email</Icon>,
     primary: 'Email',
-    secondary: <a href="mailto:nicholas.domenichini@gmail.com">nicholas.domenichini@gmail.com</a>
+    secondary: <a href="mailto:nick.domenichini@gmail.com">nick.domenichini@gmail.com</a>
   },
   {
     icon: <Icon>code</Icon>,
@@ -39,7 +39,7 @@ const list2 = [
   {
     icon: <Icon>work</Icon>,
     primary: 'LinkedIn',
-    secondary: <a href="https://www.linkedin.com/in/nicholas-domenichini/">in/nicholas-domenichini/</a>
+    secondary: <a href="https://www.linkedin.com/in/nick-domenichini/">in/nick-domenichini/</a>
   },
   {
     icon: <Icon>image</Icon>,

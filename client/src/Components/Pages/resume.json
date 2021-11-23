@@ -2,23 +2,35 @@
   "Technical Skills": [
     {
       "title": "Languages",
-      "list": "JavaScript (React.js, React Native, Node.js), C, Java 8, Python 3, SQL, Bash, HTML/CSS"
+      "list": "JavaScript (Node.js, React.js, React Native), TypeScript, Python 3, SQL, C, Java 8, Bash, HTML/CSS"
     },
     {
       "title": "DevOps",
-      "list": "AWS, Azure, Git, Docker, Apache, Nginx, IIS, MySQL, PostgreSQL, SQL Server, Firebase"
+      "list": "AWS, Azure, Git, Docker, Apache, Nginx, IIS, MySQL, PostgreSQL, Microsoft SQL Server"
     },
     {
       "title": "Operating Systems",
-      "list": "GNU/Linux (Debian, Fedora, Ubuntu), Microsoft Windows, MacOS, Android, iOS"
+      "list": "GNU/Linux (Ubuntu, Debian, Fedora), Microsoft Windows, MacOS, Android, iOS"
     }
   ],
   "Experience": [
-{
+    {
+      "title": "Software Developer (Backend)",
+      "company": "InFlight Corporation",
+      "location": "Kitchener, Ontario",
+      "timePeriod": "Mar. 2021 - Oct. 2021",
+      "bullets": [
+        "Worked alongside a small team in an agile environment to develop and evolve a specialized Node.js proxy server",
+        "Individually developed and maintained numerous API projects used to provide additional functionality to client applications",
+        "Frequently collaborated with frontend and implementation teams to design and test new application features",
+        "Performed technical analysis of new packages and platforms used to improve server performance and stability"
+      ]
+    },
+    {
       "title": "Mobile Developer (Contract)",
       "company": "National Logistics Services",
       "location": "Mississauga, Ontario",
-      "timePeriod": "Oct. 2020 - Present",
+      "timePeriod": "Oct. 2020 - Mar. 2021",
       "bullets": [
         "Leveraged the full stack of React Native, Node.js, and Microsoft SQL Server to implement a news bulletin system into a COVID-19 screening application, thus streamlining communication between upper management and employees",
         "Utilized Python scripting to automatically register all employees with an Okta authentication solution, allowing employees access to the mobile application"
@@ -34,28 +46,6 @@
         "Deployed this application as an internal tool for use by general managers and executives to control the automated billing process for clients",
         "Led product meetings and discussions with various company executives "
       ]
-    },
-    {
-      "title": "Undergraduate Research Assistant, Full-Stack Web Developer",
-      "company": "University of Guelph - School of Computer Science",
-      "location": "Guelph, Ontario",
-      "timePeriod": "May 2018 - Aug. 2018",
-      "bullets": [
-        "Worked on a research team as a full stack web developer on an e-learning web application for automated feedback of writing and programming assignments",
-        "Designed and implemented a modular survey system to help students decompose assignments and provided accompanying documentation",
-        "Created file parsing utilities to gather statistics of student submitted C files"
-      ]
-    },
-    {
-      "title": "Application & Systems Developer",
-      "company": "Domson Engineering and Inspection Ltd.",
-      "location": "Brampton, Ontario",
-      "timePeriod": "Sept. 2017 - April 2018",
-      "bullets": [
-        "Designed and implemented an electronic form system as a replacement for traditional pen & paper inspection forms, improving administrative workflow",
-        "Created a training program for new users of the software",
-        "Wrote comprehensive software documentation"
-      ]
     }
   ],
   "Education": [
@@ -65,7 +55,7 @@
       "location": "Guelph, Ontario",
       "timePeriod": "Sept. 2016 - May 2020",
       "bullets": [
-        "Notable courses: Cloud Computing, Database Systems & Concepts, Systems Programming, Computer Networks, Software Reliability & Testing, Parallel Programming, Introduction to Cryptography"
+        "Notable courses: Cloud Computing, Database Systems & Concepts, Computer Networks, Parallel Programming, Intro to Cryptography, Systems Programming"
       ]
     }
   ]
