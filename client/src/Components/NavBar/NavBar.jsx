@@ -1,6 +1,6 @@
-import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import { withRouter } from 'react-router-dom'
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { useNavigate } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -15,7 +15,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Icon from '@material-ui/core/Icon';
 
-const styles = {
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     height: '66px'
@@ -29,7 +29,7 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   }
-};
+}));
 
 //The list of items in the drawer
 const items = [
@@ -72,67 +72,63 @@ function HideOnScroll(props) { //Helper component that hides the top app bar whe
   );
 }
 
-class NavBar extends React.Component {
-  state = {
-      open: false
+const NavBar = () => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const navigate = useNavigate();
+  const classes = useStyles();
+
+  const handleClickOpen = () => {
+    setDrawerOpen(true);
   }
 
-  handleClickOpen = () => {
-    this.setState({open: true});
+  const handleClickClose = () => {
+    setDrawerOpen(false);
   }
 
-  handleClickClose = () => {
-    this.setState({open: false});
-  }
-  
-  render() {
-    const { classes } = this.props;
-
-    return (
-      <div className={classes.root}>
-        <HideOnScroll {...this.props}>
-          <AppBar color="primary">
-            <Toolbar>
-              <IconButton
-                onClick={this.handleClickOpen}
-                className={classes.menuButton} 
-                color="inherit" 
-                aria-label="Menu"
-              >
-                <MenuIcon/>
-              </IconButton>
-              <div className={classes.grow} >
-                <Typography variant="h5" color="inherit">
-                  Nick Domenichini
-                </Typography>
-              </div>
-            </Toolbar>
-          </AppBar>
-        </HideOnScroll>
-        {/*Navigation drawer that pops out when the top bar changes the state. The List contains ListItems of each entry*/}
-        <Drawer open={this.state.open} onClose={this.handleClickClose}>
-          <List style={{width: 250}}>
-            {items.map(item => (
-              <ListItem 
-                button
-                key={item.text}
-                onClick={() => {
-                  //By pushing the path onto the history, react router will re-route automatically to the new path
-                  this.props.history.push({pathname: item.path});
-                  this.handleClickClose();
-                }}
-              >
-                <ListItemIcon>
-                  {item.icon}
-                </ListItemIcon>
-                <ListItemText primary={item.text} />
-              </ListItem>
-            ))}
-          </List>
-        </Drawer>
-      </div>
-    )
-  }
+  return (
+    <div className={classes.root}>
+      <HideOnScroll>
+        <AppBar color="primary">
+          <Toolbar>
+            <IconButton
+              onClick={handleClickOpen}
+              className={classes.menuButton} 
+              color="inherit" 
+              aria-label="Menu"
+            >
+              <MenuIcon/>
+            </IconButton>
+            <div className={classes.grow} >
+              <Typography variant="h5" color="inherit">
+                Nick Domenichini
+              </Typography>
+            </div>
+          </Toolbar>
+        </AppBar>
+      </HideOnScroll>
+      {/*Navigation drawer that pops out when the top bar changes the state. The List contains ListItems of each entry*/}
+      <Drawer open={drawerOpen} onClose={handleClickClose}>
+        <List style={{width: 250}}>
+          {items.map(item => (
+            <ListItem 
+              button
+              key={item.text}
+              onClick={() => {
+                //By pushing the path onto the history, react router will re-route automatically to the new path
+                navigate(item.path);
+                handleClickClose();
+              }}
+            >
+              <ListItemIcon>
+                {item.icon}
+              </ListItemIcon>
+              <ListItemText primary={item.text} />
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
+    </div>
+  )
 }
 
-export default withStyles(styles)(withRouter(NavBar));
+export default NavBar;

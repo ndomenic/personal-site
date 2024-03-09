@@ -1,5 +1,5 @@
 import React from 'react';
-import { withStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
@@ -36,7 +36,7 @@ const aboutMeList = [
   }
 ]
 
-const styles = theme => ({
+const useStyles = makeStyles((theme) => ({
   verticalPadding: {
     paddingTop: theme.spacing(3),
     paddingBottom: theme.spacing(3),
@@ -51,45 +51,43 @@ const styles = theme => ({
   content: {
     flex: '1 0 auto',
   },
-});
+}));
 
-class AboutPage extends React.Component {
-  render() {
-    const {classes} = this.props;
+const AboutPage = () => {
+  const classes = useStyles();
 
-    return (
-      <Container maxWidth="md" className={classes.verticalPadding}>
-        <Typography variant="h4" component="h3">
-          About Me
-        </Typography>
-        <br/>
-        <Grid container spacing={3}>
-          {aboutMeList.map((element, index) => (
-            <Grid item xs={12}>
-              <Card className={classes.card}>
-                <Grid container spacing={1}>
-                  <Grid item md={8} sm= {7} xs={12}>
-                    <CardContent className={classes.content}>
-                    <Typography variant="h6" component="h3">
-                        {element.title}
-                      </Typography>
-                      {element.description}
-                    </CardContent>
-                  </Grid>
-                  <Grid item md={4} sm={5} xs={12}>
-                    <CardMedia
-                      className={classes.image}
-                      image={element.image}
-                    />
-                  </Grid>
+  return (
+    <Container maxWidth="md" className={classes.verticalPadding}>
+      <Typography variant="h4" component="h3">
+        About Me
+      </Typography>
+      <br/>
+      <Grid container spacing={3}>
+        {aboutMeList.map((element, index) => (
+          <Grid item xs={12}>
+            <Card className={classes.card}>
+              <Grid container spacing={1}>
+                <Grid item md={8} sm= {7} xs={12}>
+                  <CardContent className={classes.content}>
+                  <Typography variant="h6" component="h3">
+                      {element.title}
+                    </Typography>
+                    {element.description}
+                  </CardContent>
                 </Grid>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    )
-  }
+                <Grid item md={4} sm={5} xs={12}>
+                  <CardMedia
+                    className={classes.image}
+                    image={element.image}
+                  />
+                </Grid>
+              </Grid>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
+  )
 }
 
-export default withStyles(styles)(AboutPage);
+export default AboutPage;

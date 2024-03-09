@@ -1,5 +1,5 @@
 import React from 'react';
-import { withStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -48,7 +48,7 @@ const list2 = [
   }
 ];
 
-const styles = theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     padding: '24px'
   },
@@ -66,63 +66,61 @@ const styles = theme => ({
     paddingTop: theme.spacing(3),
     paddingBottom: theme.spacing(3),
   }
-});
+}));
 
-class ContactPage extends React.Component {
-  render() {
-    const {classes} = this.props; 
+const ContactPage = () => {
+  const classes = useStyles(); 
 
-    return (
-      <React.Fragment>
-        <CssBaseline />
-        <Container maxWidth="md" className={classes.verticalPadding}>
-          <Typography variant="h4" component="h3">
-            Contact Me
-          </Typography>
-          <br/>
-          <Typography component="p">
-            You can connect with me through any of the following mediums; 
-            I usually reply to phone calls and emails the fastest. 
-            If you want to meet up and have a chat with me, 
-            I'm usually in the Guelph area and would love to grab a coffee. 
-          </Typography>
-          <br/>
-          <Paper className={classes.paper}>
-            <Grid container spacing={0}>
-              <Grid item xs={12} sm={6}>
-                <List className={classes.list}>
-                  {list1.map((element, index) => (
-                    <ListItem key={index}>
-                      <ListItemAvatar>
-                        <Avatar>
-                          {element.icon}
-                        </Avatar>
-                      </ListItemAvatar>
-                      <ListItemText primary={element.primary} secondary={element.secondary} />
-                    </ListItem>
-                  ))}
-                </List>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <List className={classes.list}>
-                  {list2.map((element, index) => (
-                    <ListItem key={index}>
-                      <ListItemAvatar>
-                        <Avatar>
-                          {element.icon}
-                        </Avatar>
-                      </ListItemAvatar>
-                      <ListItemText primary={element.primary} secondary={element.secondary} />
-                    </ListItem>
-                  ))}
-                </List>
-              </Grid>
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="md" className={classes.verticalPadding}>
+        <Typography variant="h4" component="h3">
+          Contact Me
+        </Typography>
+        <br/>
+        <Typography component="p">
+          You can connect with me through any of the following mediums; 
+          I usually reply to phone calls and emails the fastest. 
+          If you want to meet up and have a chat with me, 
+          I'm usually in the Guelph area and would love to grab a coffee. 
+        </Typography>
+        <br/>
+        <Paper className={classes.paper}>
+          <Grid container spacing={0}>
+            <Grid item xs={12} sm={6}>
+              <List className={classes.list}>
+                {list1.map((element, index) => (
+                  <ListItem key={index}>
+                    <ListItemAvatar>
+                      <Avatar>
+                        {element.icon}
+                      </Avatar>
+                    </ListItemAvatar>
+                    <ListItemText primary={element.primary} secondary={element.secondary} />
+                  </ListItem>
+                ))}
+              </List>
             </Grid>
-          </Paper>
-        </Container>
-      </React.Fragment>
-    )
-  }
+            <Grid item xs={12} sm={6}>
+              <List className={classes.list}>
+                {list2.map((element, index) => (
+                  <ListItem key={index}>
+                    <ListItemAvatar>
+                      <Avatar>
+                        {element.icon}
+                      </Avatar>
+                    </ListItemAvatar>
+                    <ListItemText primary={element.primary} secondary={element.secondary} />
+                  </ListItem>
+                ))}
+              </List>
+            </Grid>
+          </Grid>
+        </Paper>
+      </Container>
+    </React.Fragment>
+  )
 }
 
-export default withStyles(styles)(ContactPage);
+export default ContactPage;

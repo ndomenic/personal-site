@@ -1,5 +1,5 @@
 import React from 'react';
-import { withStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Icon from '@material-ui/core/Icon';
@@ -29,7 +29,7 @@ const highlights = [
   }
 ]
 
-const styles = theme => ({
+const useStyles = makeStyles((theme) => ({
   imageDivOuter: {
     overflow: 'hidden',
     height: '400px',
@@ -60,44 +60,42 @@ const styles = theme => ({
     fontSize: '4rem',
     margin: '24px'
   }
-});
+}));
 
-class HomePage extends React.Component {
-  render() {
-    const {classes} = this.props;
-    const photo = `${process.env.REACT_APP_ADDRESS}/${process.env.REACT_APP_API_NAME}/homePage.png`
+const HomePage = () => {
+  const classes = useStyles();
+  const photo = `${process.env.REACT_APP_ADDRESS}/${process.env.REACT_APP_API_NAME}/homePage.png`
 
-    return (
-      <React.Fragment>
-        <div className={classes.imageDivOuter}>
-          <div className={classes.imageDivInner}>
-            <img className={classes.image} src={photo} alt=""/>
-          </div>
+  return (
+    <React.Fragment>
+      <div className={classes.imageDivOuter}>
+        <div className={classes.imageDivInner}>
+          <img className={classes.image} src={photo} alt=""/>
         </div>
-        <Container maxWidth="md">
-          <Typography variant="h5" align="center" className={classes.heading}>
-            Hi, I'm Nick; Full Stack software developer, dog lover, and car enthusiast.
-          </Typography>
-          <Grid container spacing={3}>
-            {highlights.map((element) => (
-              <Grid item xs={12} sm={4}>
-                <div style={{textAlign: 'center'}}>
-                  <Icon color="primary" className={classes.icon}>{element.icon}</Icon>
-                  <Typography variant="h5" align="center" className={classes.subHeading}>
-                    {element.title}
-                  </Typography>
-                </div>
-                {element.description}
-              </Grid>
-            ))}
-          </Grid>
-          <Typography component="h5" align="center" className={classes.blurb}>
-            This website is my little corner of the internet. Feel free to take a look around, <a href="/about">get to know me better</a>, or check out some of my <a href="/projects">side projects</a>.
-          </Typography>
-        </Container>
-      </React.Fragment>
-    )
-  }
+      </div>
+      <Container maxWidth="md">
+        <Typography variant="h5" align="center" className={classes.heading}>
+          Hi, I'm Nick; Full Stack software developer, dog lover, and car enthusiast.
+        </Typography>
+        <Grid container spacing={3}>
+          {highlights.map((element, index) => (
+            <Grid item xs={12} sm={4} key={index}>
+              <div style={{textAlign: 'center'}}>
+                <Icon color="primary" className={classes.icon}>{element.icon}</Icon>
+                <Typography variant="h5" align="center" className={classes.subHeading}>
+                  {element.title}
+                </Typography>
+              </div>
+              {element.description}
+            </Grid>
+          ))}
+        </Grid>
+        <Typography component="h5" align="center" className={classes.blurb}>
+          This website is my little corner of the internet. Feel free to take a look around, <a href="/about">get to know me better</a>, or check out some of my <a href="/projects">side projects</a>.
+        </Typography>
+      </Container>
+    </React.Fragment>
+  )
 }
 
-export default withStyles(styles)(HomePage);
+export default HomePage;
